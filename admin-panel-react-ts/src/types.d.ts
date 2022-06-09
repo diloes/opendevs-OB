@@ -6,3 +6,9 @@ export interface RegisterUser {
   password: string,
   rememberPassword : string
 }
+
+export interface User {
+  id: any
+  email: string,
+  password: string
+}

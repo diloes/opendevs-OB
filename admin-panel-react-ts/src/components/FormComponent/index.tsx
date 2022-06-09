@@ -29,7 +29,7 @@ const mailformat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-
 
 const FormComponent: React.FC = () => {
 
-  const { inputValues, handleChange } = useContext(DataContext)
+  const { inputValues, handleChange, saveUser } = useContext(DataContext)
 
   /* const [inputValues, setInputValues] = useState<FormState['inputValues']>(INITIAL_STATE) */
   const [formStatus, setFormStatus] = useState(false)
@@ -50,8 +50,9 @@ const FormComponent: React.FC = () => {
     e.preventDefault() 
     const { email, password, rememberPassword } = inputValues
     if( email.match(mailformat) && password === rememberPassword){
-      console.log(inputValues)
-      setFormStatus(true)    
+      console.log(`handleSubmit: ${email} ${password}`)
+      setFormStatus(true)  
+      saveUser(email, password)  
     }
   }
 

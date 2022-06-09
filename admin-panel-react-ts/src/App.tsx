@@ -17,8 +17,7 @@ const App: React.FC = () => {
           <Route path='/crear-oferta' element={<CrearOferta />} />              
         </Routes>
       </BrowserRouter>
-    </DataProvider>
-    
+    </DataProvider> 
   )
 }
 
