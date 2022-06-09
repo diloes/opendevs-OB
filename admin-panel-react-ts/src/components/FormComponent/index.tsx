@@ -41,7 +41,7 @@ const FormComponent: React.FC = () => {
   /**
    * Validamos los datos y ponemos en true la variable de estado formStatus para que 
    * entre el Navigate y nos lleve al dashboard.
-   * @param e evento del botón
+   * @param { Event } e evento del botón
    */
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault() 
