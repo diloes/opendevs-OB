@@ -27,7 +27,7 @@ const Login = () => {
           <FormComponent />
         </Box>
 
-        <Box maxW={800} w='100%' h='100vh' backgroundColor='blue.500' marginRight={-2} >
+        <Box maxW={800} w='100%' h='100vh' backgroundColor='blue.500' marginRight={-2}>
           <Text>Aquí va la imagen</Text>
         </Box>
       </HStack>

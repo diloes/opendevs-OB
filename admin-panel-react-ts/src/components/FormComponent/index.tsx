@@ -8,13 +8,14 @@ import {
   Link,
   Text
 } from '@chakra-ui/react'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Navigate } from 'react-router-dom'
+import { DataContext } from '../../context/DataContext'
 
 import theme from '../../theme'
-import { RegisterUser } from '../../types'
+/* import { RegisterUser } from '../../types' */
 
-interface FormState {
+/* interface FormState {
   inputValues: RegisterUser
 }
 
@@ -22,21 +23,23 @@ const INITIAL_STATE = {
   email: '',
   password: '',
   rememberPassword: ''
-}
+} */
 
 const mailformat = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
 const FormComponent: React.FC = () => {
 
-  const [inputValues, setInputValues] = useState<FormState['inputValues']>(INITIAL_STATE)
+  const { inputValues, handleChange } = useContext(DataContext)
+
+  /* const [inputValues, setInputValues] = useState<FormState['inputValues']>(INITIAL_STATE) */
   const [formStatus, setFormStatus] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement >) => {
+  /* const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement >) => {
     setInputValues({
       ...inputValues,
       [e.target.name]: e.target.value
     })
-  }
+  } */
 
   /**
    * Validamos los datos y ponemos en true la variable de estado formStatus para que 
@@ -107,7 +110,7 @@ const FormComponent: React.FC = () => {
               Create an Account
             </Link>
           </Text>
-          <Text fontSize={15} mt={20} >
+          <Text fontSize={13} mt={20} >
             2022 Diloes SA. All Rigths Reserved. Made with love by Diloes!
           </Text>
         </form> 
