@@ -1,7 +1,7 @@
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <h1 style={{ fontSize: '50px' }}>Dasboard</h1>
   )
 }
 
